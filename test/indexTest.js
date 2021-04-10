@@ -19,6 +19,11 @@ describe('index.js', function () {
         expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield", "Ralph"]);
       });
     });
+    beforeEach(function () {
+      cats.length = 0;
+
+      cats.push('Milo', 'Otis', 'Garfield');
+    });
 
     describe('destructivelyPrependCat(name)', function () {
       it('prepends a cat to the beginning of the cats array', function () {
@@ -26,6 +31,11 @@ describe('index.js', function () {
 
         expect(cats).to.have.ordered.members(["Bob", "Milo", "Otis", "Garfield"]);
       });
+    });
+    beforeEach(function () {
+      cats.length = 0;
+
+      cats.push('Milo', 'Otis', 'Garfield');
     });
 
     describe('destructivelyRemoveLastCat()', function () {
@@ -35,6 +45,11 @@ describe('index.js', function () {
         expect(cats).to.have.ordered.members(["Milo", "Otis"]).and.to.not.include('Garfield');
       });
     });
+    beforeEach(function () {
+      cats.length = 0;
+
+      cats.push('Milo', 'Otis', 'Garfield');
+    });
 
     describe('destructivelyRemoveFirstCat()', function () {
       it('removes the first cat from the cats array', function () {
@@ -42,6 +57,11 @@ describe('index.js', function () {
 
         expect(cats).to.have.ordered.members(["Otis", "Garfield"]).and.to.not.include('Milo');
       });
+    });
+    beforeEach(function () {
+      cats.length = 0;
+
+      cats.push('Milo', 'Otis', 'Garfield');
     });
 
     describe('appendCat(name)', function () {
@@ -51,6 +71,7 @@ describe('index.js', function () {
         expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield"]);
       });
     });
+    
 
     describe('prependCat(name)', function () {
       it('prepends a cat to the cats array and returns a new array, leaving the cats array unchanged', function () {
